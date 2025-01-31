@@ -8,3 +8,4 @@ export type Icons =
   | 'notifications'
   | 'search'
   | 'tag'
+  | 'menu'
