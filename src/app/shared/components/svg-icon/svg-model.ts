@@ -1,0 +1,10 @@
+export type Icons =
+  | 'link'
+  | 'add'
+  | 'arrow-back'
+  | 'contacts'
+  | 'favorites'
+  | 'history'
+  | 'notifications'
+  | 'search'
+  | 'tag'

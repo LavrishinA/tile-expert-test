@@ -10,8 +10,7 @@ import {
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 import { map, shareReplay } from 'rxjs/operators'
 import { SvgIconService } from '@shared/services/svg-icon.service'
-
-type Icons = 'link' | 'setting'
+import { Icons } from '@shared/components/svg-icon/svg-model'
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
