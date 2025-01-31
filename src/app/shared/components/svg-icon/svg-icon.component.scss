@@ -1,0 +1,17 @@
+:host {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  color: inherit;
+}
+
+div {
+  height: 100%;
+  width: 100%;
+
+  & svg {
+    display: block;
+    color: inherit;
+    fill: currentColor;
+  }
+}
