@@ -1,5 +1,12 @@
 import { HttpClient } from '@angular/common/http'
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  Input,
+  OnInit,
+} from '@angular/core'
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 import { map, shareReplay } from 'rxjs/operators'
 import { SvgIconService } from '@shared/services/svg-icon.service'
@@ -18,20 +25,15 @@ export class SvgIconComponent implements OnInit {
   @Input() public iconName!: Icons
 
   public sanitizedSvgContent!: SafeHtml
+  private cdr = inject(ChangeDetectorRef)
+  private sanitizer = inject(DomSanitizer)
+  private http = inject(HttpClient)
+  private svgIconService = inject(SvgIconService)
 
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private sanitizer: DomSanitizer,
-    private http: HttpClient,
-    private svgIconService: SvgIconService
-  ) {}
-
-  // *2
   public ngOnInit(): void {
     this.loadSvg()
   }
 
-  // *3
   private loadSvg(): void {
     // Exit from the method in case of icon absence
     if (!this.iconName) return
