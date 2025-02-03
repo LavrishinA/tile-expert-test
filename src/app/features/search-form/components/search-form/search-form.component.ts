@@ -39,6 +39,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class SearchFormComponent {
   isOpen = false
+  isDetailOpen: string | null = null
   isFormHidden: string | null = ''
   elementRef = inject(ElementRef)
 
@@ -46,6 +47,7 @@ export class SearchFormComponent {
   onClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.isOpen = false
+      this.isDetailOpen = null
     }
   }
 
@@ -67,5 +69,9 @@ export class SearchFormComponent {
     if (this.isOpen) {
       this.isFormHidden = null
     }
+  }
+
+  onFocusInput() {
+    this.isDetailOpen = ''
   }
 }

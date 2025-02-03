@@ -8,7 +8,23 @@
         (@slideInOut.done)="onAnimationDone()"
         (@slideInOut.start)="onAnimationStart()"
   >
-    <input />
+    <details [attr.open]="isDetailOpen">
+      <summary>
+        <input type="search" (focus)="onFocusInput()" />
+      </summary>
+      <div class="details-container">
+        <div class="history">
+          <p>История</p>
+        </div>
+        <div class="search-params">
+          <fieldset>
+            <legend>Автор</legend>
+            <input type="text">
+          </fieldset>
+        </div>
+
+      </div>
+    </details>
   </form>
 </div>
 
