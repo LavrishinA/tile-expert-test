@@ -1,6 +1,7 @@
 :host {
   display: flex;
   align-items: center;
+
 }
 
 nav {
@@ -16,6 +17,10 @@ ul {
   gap: 1rem;
 }
 
+li {
+  padding: 0 .5rem
+}
+
 a {
   display: flex;
   justify-content: center;
@@ -25,11 +30,5 @@ a {
   &:hover {
     color: var(--grey-300)
   }
-}
-
-.nav-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 

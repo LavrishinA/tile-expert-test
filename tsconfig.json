@@ -33,6 +33,9 @@
       ],
       "@core/*": [
         "app/core/*"
+      ],
+      "@features/*": [
+        "app/features/*"
       ]
     }
   },

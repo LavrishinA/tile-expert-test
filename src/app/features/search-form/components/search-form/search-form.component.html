@@ -1,0 +1,17 @@
+<div>
+  <button appButton>
+    <app-svg-icon iconName="search" (click)="toggleInput()"
+    />
+  </button>
+  <form [attr.hidden]="isFormHidden"
+        [@slideInOut]="animationState"
+        (@slideInOut.done)="onAnimationDone()"
+        (@slideInOut.start)="onAnimationStart()"
+  >
+    <input />
+  </form>
+</div>
+
+
+
+
