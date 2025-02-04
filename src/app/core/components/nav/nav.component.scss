@@ -18,10 +18,13 @@ ul {
 }
 
 li {
-  padding: 0 .5rem
+  padding: 0 .5rem;
+
 }
 
 a {
+  flex-shrink: 1;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -15,7 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-
+    z-index: 2;
     background-color: currentColor;
 
     mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"></svg>') center / 100%;
@@ -35,7 +35,7 @@
   }
 
   &[type='checkbox']:checked:after {
-    z-index: -1;
+    z-index: 1;
     content: "";
     position: absolute;
     top: 50%;
@@ -46,9 +46,11 @@
     height: 2rem;
     border-radius: 50%;
     background-color: var(--grey-100);
+
+    -webkit-animation: scale-down-center .4s cubic-bezier(.25, .46, .45, .94) both;
+    animation: scale-down-center .4s cubic-bezier(.25, .46, .45, .94) both
   }
 }
-
 
 
 

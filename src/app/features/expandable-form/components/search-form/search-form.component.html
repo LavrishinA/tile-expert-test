@@ -1,0 +1,68 @@
+<button appButton>
+  <app-svg-icon iconName="search" (click)="toggleInput()"
+  />
+</button>
+<div class="content"
+     [attr.hidden]="isFormHidden"
+     [@slideInOut]="animationState"
+     (@slideInOut.done)="onAnimationDone()"
+     (@slideInOut.start)="onAnimationStart()">
+  <form>
+    <details [attr.open]="isDetailOpen">
+      <summary>
+        <input type="search" (focus)="onFocusInput()" placeholder="Поисковый запрос" />
+      </summary>
+      <div class="details-container">
+        <div class="history">
+          <p>История</p>
+          <div>
+            @for
+          </div>
+        </div>
+        <div class="search-params">
+          <fieldset>
+            <legend>Автор</legend>
+            <input type="text" name="author">
+          </fieldset>
+          <div class="author">
+            <label>
+              <input type="checkbox" appCheckbox name="me">
+              Я участник
+            </label>
+            <label>
+              <input type="checkbox" appCheckbox name="strict">
+              Строгий Поис
+            </label>
+            <label>
+              <input type="checkbox" appCheckbox name="headers">
+              В заголовках
+            </label>
+          </div>
+          <div class="category">
+            <fieldset>
+              <legend>Только</legend>
+              <label>
+                <input type="checkbox" appCheckbox name="tags">
+                Теги
+              </label>
+              <label>
+                <input type="checkbox" appCheckbox name="request">
+                Просьба
+              </label>
+              <label>
+                <input type="checkbox" appCheckbox name="Contacts">
+                В заголовках
+              </label>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </details>
+  </form>
+</div>
+
+
+
+
+
+
