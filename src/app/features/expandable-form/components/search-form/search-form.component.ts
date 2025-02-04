@@ -3,11 +3,12 @@ import ButtonComponent from '@shared/components/button/button.component'
 import { SvgIconComponent } from '@shared/components/svg-icon/svg-icon.component'
 import { animate, state, style, transition, trigger } from '@angular/animations'
 import { CheckboxComponent } from '@shared/components/checkbox/checkbox/checkbox.component'
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-search-form',
   standalone: true,
-  imports: [ButtonComponent, SvgIconComponent, CheckboxComponent],
+  imports: [ButtonComponent, SvgIconComponent, CheckboxComponent, FormsModule],
   templateUrl: './search-form.component.html',
   styleUrl: './search-form.component.scss',
   animations: [
@@ -43,7 +44,7 @@ export class SearchFormComponent {
   isDetailOpen: string | null = null
   isFormHidden: string | null = ''
   elementRef = inject(ElementRef)
-
+  history: string[] = ['закрепить теги', 'кнопка', 'приложение', 'форма', 'текстовое поле']
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
@@ -74,5 +75,9 @@ export class SearchFormComponent {
 
   onFocusInput() {
     this.isDetailOpen = ''
+  }
+
+  onSubmit() {
+    console.log('submit')
   }
 }

@@ -8,6 +8,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 ul {
@@ -35,3 +36,14 @@ a {
   }
 }
 
+@media (max-width: 992px) {
+  ul {
+    gap: .25rem;
+  }
+
+  li {
+    padding: 0 .125rem;
+
+  }
+
+}

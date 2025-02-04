@@ -7,7 +7,7 @@
      [@slideInOut]="animationState"
      (@slideInOut.done)="onAnimationDone()"
      (@slideInOut.start)="onAnimationStart()">
-  <form>
+  <form (ngSubmit)="onSubmit()">
     <details [attr.open]="isDetailOpen">
       <summary>
         <input type="search" (focus)="onFocusInput()" placeholder="Поисковый запрос" />
@@ -15,9 +15,11 @@
       <div class="details-container">
         <div class="history">
           <p>История</p>
-          <div>
-            @for
-          </div>
+          <ul>
+            @for (item of history; let idx = $index; track idx) {
+              <li>{{ item }}</li>
+            }
+          </ul>
         </div>
         <div class="search-params">
           <fieldset>
@@ -58,6 +60,7 @@
         </div>
       </div>
     </details>
+    <button type="submit" hidden>Su</button>
   </form>
 </div>
 
