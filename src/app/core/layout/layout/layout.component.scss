@@ -22,3 +22,26 @@ header {
   }
 
 }
+
+@media (max-width: 768px) {
+  button[appButton] {
+    order: 1;
+  }
+
+  app-nav {
+    order: 2;
+  }
+
+  app-search-form {
+    order: 3;
+  }
+
+  img {
+    order: 0;
+  }
+
+  app-user {
+    order: 4;
+  }
+
+}

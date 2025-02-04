@@ -47,3 +47,12 @@ a {
   }
 
 }
+
+@media (max-width: 768px) {
+  li:not(:last-child) {
+    display: none;
+  }
+  .label {
+    display: none;
+  }
+}
