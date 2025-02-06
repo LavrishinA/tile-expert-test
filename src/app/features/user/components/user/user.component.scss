@@ -18,7 +18,7 @@ img {
 button {
   position: relative;
 
-  div {
+  span {
     position: absolute;
     top: 4px;
     right: 2px;
@@ -30,7 +30,7 @@ button {
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   img {
     display: none;
   }

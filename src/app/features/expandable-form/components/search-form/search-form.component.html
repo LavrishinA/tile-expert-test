@@ -1,5 +1,5 @@
 <button appButton>
-  <app-svg-icon iconName="search" (click)="toggleInput()"
+  <app-svg-icon iconName="search" (click)="toggleForm()"
   />
 </button>
 <div class="content"
@@ -10,6 +10,9 @@
   <form (ngSubmit)="onSubmit()">
     <details [attr.open]="isDetailOpen">
       <summary>
+        <button appButton (click)="onBack()">
+          <app-svg-icon iconName="arrow-back" />
+        </button>
         <input type="search" (focus)="onFocusInput()" placeholder="Поисковый запрос" />
       </summary>
       <div class="details-container">
@@ -22,9 +25,10 @@
           </ul>
         </div>
         <div class="search-params">
-          <fieldset>
+          <fieldset class="author-name">
             <legend>Автор</legend>
             <input type="text" name="author">
+            <button appButton>Я</button>
           </fieldset>
           <div class="author">
             <label>

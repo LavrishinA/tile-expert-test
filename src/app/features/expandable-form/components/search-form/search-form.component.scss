@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   position: relative;
+
+  --menu-width: 650px;
 }
 
 .content {
@@ -11,40 +13,35 @@
   top: 0;
   right: 0;
   padding: 4px 4px;
-
+  z-index: 1;
 }
 
-form {
-  height: 100%;
 
-  input[type=search] {
-    appearance: none;
-    width: 100%;
-    height: 100%;
-    padding: .75rem;
-    font-size: .875rem;
-    color: var(--grey-400);
-    border: none;
-    border-radius: 3px;
+input[type=search] {
+  appearance: none;
+  width: 100%;
+  padding: .75rem;
+  font-size: .875rem;
+  color: var(--grey-400);
+  border: none;
+  border-radius: 3px;
 
-    &:focus {
-      outline: 2px solid var(--black);
-      outline-offset: -1px;
-    }
+  &:focus {
+    outline: 2px solid var(--black);
+    outline-offset: -1px;
   }
 }
 
 
-details {
-  height: 100%;
-
-
-}
-
 summary {
-  height: 100%;
   list-style: none;
   margin-bottom: 0.25rem;
+  color: black;
+  display: flex;
+
+  & button {
+    display: none;
+  }
 }
 
 .history {
@@ -67,16 +64,12 @@ summary {
       }
     }
 
-
   }
-
 
   p {
     font-size: .75rem;
     color: var(--grey-400);
   }
-
-
 }
 
 .details-container {
@@ -84,8 +77,8 @@ summary {
   grid-template-columns: 1fr 3fr;
   column-gap: 0.25rem;
   border-radius: 3px;
-  background-color: var(--white);
   box-shadow: 0 0 12px 4px var(--grey-400);
+  background-color: var(--white);
 }
 
 .search-params, .history {
@@ -101,9 +94,16 @@ summary {
 
 }
 
-fieldset {
+.author-name {
   padding: 0 0.75rem 0.75rem;
   color: var(--grey-400);
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  & button {
+    color: var(--grey-400);
+    background: var(--grey-100)
+  }
 }
 
 legend {
@@ -116,7 +116,7 @@ input[type=text] {
   height: 100%;
   font-size: .875rem;
   color: inherit;
-  border: none;
+  border: transparent;
   outline: none;
 }
 
@@ -129,16 +129,18 @@ label {
 
 .author {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .category {
 
-
   & fieldset {
     display: flex;
     justify-content: start;
-    gap: 2rem;
+    align-items: flex-start;
+    gap: 1rem;
     border: none;
     padding: .5rem 0 0 0;
   }
@@ -146,5 +148,44 @@ label {
   & legend {
     font-size: .875rem;
     color: var(--grey-700);
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    --menu-width: 100dvw;
+  }
+
+  input[type=search] {
+    background-color: var(--grey-200);
+    border-radius: 20px;
+  }
+  .content {
+    position: fixed;
+    background-color: var(--white);
+  }
+  .history {
+    display: none;
+  }
+  .details-container {
+    box-shadow: none;
+    grid-template-columns: 1fr;
+  }
+
+  .author, {
+    flex-direction: column;
+  }
+
+  .category {
+    & fieldset {
+      flex-direction: column;
+    }
+  }
+
+  summary {
+    margin:  0 1rem;
+    & button {
+      display: inline-block;
+    }
   }
 }

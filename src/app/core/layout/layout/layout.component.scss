@@ -12,7 +12,10 @@ header {
   justify-content: start;
   gap: 1rem;
   color: var(--white);
+}
 
+.menu {
+  display: none
 }
 
 
@@ -20,28 +23,34 @@ header {
   .layout-container {
     gap: 0;
   }
-
 }
 
 @media (max-width: 768px) {
-  button[appButton] {
-    order: 1;
-  }
-
-  app-nav {
-    order: 2;
-  }
-
-  app-search-form {
-    order: 3;
-  }
-
-  img {
+  .menu {
+    display: block;
     order: 0;
   }
 
-  app-user {
-    order: 4;
+  .add {
+    order: 2;
   }
 
+  img {
+    order: 1;
+    margin-right: 1rem;
+  }
+
+
+  app-nav {
+    order: 3;
+  }
+
+  app-search-form {
+    order:4;
+  }
+
+
+  app-user {
+    order: 5;
+  }
 }

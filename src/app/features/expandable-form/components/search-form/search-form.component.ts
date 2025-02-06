@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms'
       state(
         'in',
         style({
-          width: '650px',
+          width: 'var(--menu-width)',
           opacity: 1,
         })
       ),
@@ -30,7 +30,7 @@ import { FormsModule } from '@angular/forms'
       transition('out => in', [
         animate(
           '0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940)',
-          style({ width: '650px', opacity: 1 })
+          style({ width: 'var(--menu-width)', opacity: 1 })
         ),
       ]),
       transition('in => out', [
@@ -45,15 +45,15 @@ export class SearchFormComponent {
   isFormHidden: string | null = ''
   elementRef = inject(ElementRef)
   history: string[] = ['закрепить теги', 'кнопка', 'приложение', 'форма', 'текстовое поле']
+
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.isOpen = false
-      this.isDetailOpen = null
+      this.closeForm()
     }
   }
 
-  toggleInput(): void {
+  toggleForm(): void {
     this.isOpen = !this.isOpen
   }
 
@@ -79,5 +79,14 @@ export class SearchFormComponent {
 
   onSubmit() {
     console.log('submit')
+  }
+
+  onBack() {
+    this.closeForm()
+  }
+
+  private closeForm() {
+    this.isOpen = false
+    this.isDetailOpen = null
   }
 }
