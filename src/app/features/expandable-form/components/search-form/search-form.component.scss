@@ -39,6 +39,10 @@ summary {
   color: black;
   display: flex;
 
+  &::-webkit-details-marker {
+    display: none;
+  }
+
   & button {
     display: none;
   }
@@ -100,6 +104,7 @@ summary {
   display: flex;
   align-items: center;
   border-radius: 3px;
+
   & button {
     color: var(--grey-400);
     background: var(--grey-100)
@@ -183,7 +188,8 @@ label {
   }
 
   summary {
-    margin:  0 1rem;
+    margin: 0 1rem;
+
     & button {
       display: inline-block;
     }

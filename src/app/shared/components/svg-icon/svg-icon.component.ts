@@ -37,7 +37,7 @@ export class SvgIconComponent implements OnInit {
     // Exit from the method in case of icon absence
     if (!this.iconName) return
     // Construct your path to an icon
-    const svgPath = `/assets/icons/${this.iconName}.svg`
+    const svgPath = `assets/icons/${this.iconName}.svg`
 
     // Check if the icon is already cached
     if (!this.svgIconService.svgIconMap.has(svgPath)) {

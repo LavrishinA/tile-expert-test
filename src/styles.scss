@@ -12,6 +12,10 @@ body {
   background-color: yellowgreen;
 }
 
+html, body {
+  min-width: 100%;
+}
+
 ul, ol {
   list-style: none;
 }

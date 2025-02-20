@@ -13,7 +13,6 @@ import { UserComponent } from '@features/user/components/user/user.component'
     NgOptimizedImage,
     NavComponent,
     SearchFormComponent,
-    SearchFormComponent,
     ButtonComponent,
     SvgIconComponent,
     UserComponent,
