@@ -32,6 +32,9 @@ button {
 }
 
 @media (max-width: 576px) {
+  :host {
+    margin-left: 0;
+  }
   img {
     display: none;
   }

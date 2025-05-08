@@ -44,7 +44,14 @@ export class SearchFormComponent {
   isDetailOpen: string | null = null
   isFormHidden: string | null = ''
   elementRef = inject(ElementRef)
-  history: string[] = ['закрепить теги', 'кнопка', 'приложение', 'форма', 'текстовое поле']
+  history: string[] = [
+    'закрепить теги',
+    'кнопка',
+    'приложение',
+    'форма',
+    'текстовое поле',
+    'выпадающий список',
+  ]
 
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
